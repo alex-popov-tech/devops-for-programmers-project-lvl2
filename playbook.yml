@@ -3,7 +3,6 @@
   become: true
   remote_user: root
   roles:
-      - geerlingguy.docker
       - geerlingguy.pip
       - { role: datadog.datadog, become: yes }
   vars_files:
