@@ -2,9 +2,6 @@
   hosts: all
   become: true
   remote_user: root
-  roles:
-      - geerlingguy.pip
-      - { role: datadog.datadog, become: yes }
   vars_files:
       - group_vars/webservers.yml
       - group_vars/datadog.yml
@@ -12,7 +9,7 @@
       - pip_install_packages:
             - name: docker
 
-  tasks:
+  pre_tasks:
       - name: Update and upgrade apt packages
         become: true
         apt:
@@ -20,6 +17,11 @@
             update_cache: yes
             cache_valid_time: 86400 #One day
 
+  roles:
+      - geerlingguy.pip
+      - { role: datadog.datadog, become: yes }
+
+  tasks:
       - name: Pull default Docker image
         docker_image:
             name: '{{ app_image }}'
