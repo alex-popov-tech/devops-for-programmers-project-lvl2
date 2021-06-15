@@ -1,10 +1,10 @@
+- import_playbook: datadog.yml
 - name: Deploy test app
   hosts: all
   become: true
   remote_user: root
   vars_files:
       - group_vars/webservers.yml
-      - group_vars/datadog.yml
   vars:
       - pip_install_packages:
             - name: docker
@@ -19,7 +19,6 @@
 
   roles:
       - geerlingguy.pip
-      - { role: datadog.datadog, become: yes }
 
   tasks:
       - name: Pull default Docker image
