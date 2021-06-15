@@ -1,4 +1,4 @@
-app_image: "redis"
+app_image: "redmine"
 
 REDMINE_DB_POSTGRES: !vault |
           $ANSIBLE_VAULT;1.1;AES256
