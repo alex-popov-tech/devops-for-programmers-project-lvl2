@@ -1,4 +1,6 @@
 - import_playbook: datadog.yml
+  when: datadog_api_key is defined
+
 - name: Deploy test app
   hosts: all
   become: true
