@@ -22,7 +22,7 @@
   tasks:
       - name: Pull default Docker image
         docker_image:
-            name: '{{ app_image }}'
+            name: redmine
             source: pull
 
       - name: Run container
