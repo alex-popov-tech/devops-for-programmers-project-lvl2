@@ -28,7 +28,7 @@
       - name: Run container
         docker_container:
             name: app
-            image: '{{ app_image }}'
+            image: redmine
             ports:
                 - '3000:3000'
             env:
