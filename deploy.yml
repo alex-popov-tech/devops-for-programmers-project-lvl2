@@ -2,10 +2,6 @@
   hosts: all
   become: true
   remote_user: root
-  gather_facts: no
-  vars:
-      - pip_install_packages:
-            - name: docker
   tasks:
       - name: Run container
         docker_container:
