@@ -7,6 +7,7 @@
 
 Install `ansible` version > 4.
 Install dependecies with `make setup`.
+Get secret `vault_pass_file` and place it in repo root.
 
 #### Commands
 
